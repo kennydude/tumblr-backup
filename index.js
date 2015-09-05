@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var argv = process.argv.slice(2);
 var path = require('path');
 var glob = require('glob');
@@ -36,9 +38,9 @@ switch (command) {
         if(_.isEmpty(files)){
             var upto = null;
         } else{
-            var upto = _.max(files, function(file){
-                return file.split("-")[1] * 1;
-            });
+            var upto = path.basename(_.max(files, function(file){
+                return path.basename(file).split("-")[1] * 1;
+            }));
         }
 
         // Now we go through tumblr!
@@ -49,7 +51,7 @@ switch (command) {
             tags = JSON.parse(fs.readFileSync(path.join(where, 'tags.json')));
         }
         if(fs.existsSync(path.join(where, 'posts.json'))){
-            tags = JSON.parse(fs.readFileSync(path.join(where, 'posts.json')));
+            allposts = JSON.parse(fs.readFileSync(path.join(where, 'posts.json')));
         }
 
         // Finih
@@ -103,14 +105,15 @@ switch (command) {
                     }
 
                     _.each(body.response.posts, function(post){
-                        if(post['timestamp'] == upto){
+                        var filename = "post-" + post['timestamp'] + '-' +
+                            (post['slug'] || post['type']) + '.json';
+
+                        if(filename == upto){
                             console.log('previous backup point found');
                             fin();
                             process.exit(0);
                         }
 
-                        var filename = "post-" + post['timestamp'] + '-' +
-                            (post['slug'] || post['type']) + '.json';
                         if(post['format'] != "html"){
                             throw new Error("cannot handle " + post['format'] + " yet");
                         }
