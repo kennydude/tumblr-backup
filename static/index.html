@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+    <title>Tumblr Archive Browser</title>
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/app.css">
+
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="apple-touch-icon-precomposed" href="icon.png">
+    <meta name="apple-mobile-web-app-title" content="">
+    <link type="text/plain" rel="author" href="humans.txt">
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Tumblr Archive Browser</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="appContents">
+            Just a moment while the app loads...
+        </div>
+    </div>
+
+    <script id="loading" type="text/html">
+        Nothing to show at the moment...
+    </script>
+    <script id="post" type="text/html">
+    <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <% if(title){ %>
+            <h1><%- title %></h1>
+        <% } %>
+        <% if(video){ %>
+            <video controls><source src="<%- video %>" /></video>
+        <% } %>
+        <% if(photos){ %>
+            <div class="photos">
+            <% _.each(photos, function(photo){
+                %>
+                <img src="<%- photo %>" />
+                <%
+            }) %>
+            </div>
+        <% } %>
+        <% if(text){ %>
+        <div class="text">
+            <%= text %>
+        </div>
+        <% } %>
+        <p>
+            <a class="btn btn-primary" href="<%- url %>">on tumblr</a>
+            <% if(tags){ %>
+                <% _.each(tags, function(tag){ %>
+                    <a class="btn btn-default" href="#tag/<%- tag %>"><%- tag %></a>
+                <% }) %>
+            <% } %>
+        </p>
+    </div>
+    </div>
+    </script>
+    <script id="list" type="text/html">
+        <h1><%- title %></h1>
+        <ul class="list"></ul>
+    </script>
+    <script id="short-post" type="text/html">
+        <a href="#post/<%- value %>">
+            <%- value.substring(0, value.length-5) %>
+        </a>
+    </script>
+
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/node_modules/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="/node_modules/backbone/backbone-min.js"></script>
+    <script type="text/javascript" src="/node_modules/backbone.marionette/lib/backbone.marionette.min.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
+
+</body>
+</html>

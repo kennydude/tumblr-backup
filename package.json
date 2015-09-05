@@ -1,0 +1,32 @@
+{
+  "name": "tumblr-backup",
+  "version": "1.0.0",
+  "description": "Backup a tumblr blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tumblr-backup": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kennydude/tumblr-backup"
+  },
+  "author": "Joe Simpson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kennydude/tumblr-backup/issues"
+  },
+  "homepage": "https://github.com/kennydude/tumblr-backup",
+  "dependencies": {
+    "async": "^1.4.2",
+    "backbone": "^1.2.3",
+    "backbone.marionette": "^2.4.2",
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3",
+    "glob": "^5.0.14",
+    "jquery": "^2.1.4",
+    "request": "^2.61.0"
+  }
+}
