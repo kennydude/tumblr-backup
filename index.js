@@ -91,6 +91,28 @@ switch (command) {
                 return html.replace("<!-- more -->", "<hr class='more' />").replace(/https?:\/\/[0-9\.]+media\.tumblr\.com\/[^ \"]+/g, ip);
             };
 
+            var d = function(c){
+                // Now we clean up
+                async.each(downloads, function(download, callback){
+                    console.log("<< %s", download['d']);
+                    request({
+                        url: download['d'],
+                        encoding: null
+                    }, function(error, response, body){
+                        if(!error && response.statusCode == 200){
+                            fs.writeFileSync(path.join(where, download['f']), body);
+                            callback();
+                        } else {
+                            if(response){
+                                console.log("code: " + response.statusCode);
+                            }
+                            console.error("err: " + error);
+                            process.exit(-1);
+                        }
+                    });
+                }, c);
+            }
+
             var url = "http://api.tumblr.com/v2/blog/" + what + "/posts?offset=" + start + "&api_key" + key;
             console.log("< %s", url);
             request(url, function(error, response, body){
@@ -104,14 +126,22 @@ switch (command) {
                         return;
                     }
 
+                    var cancel = false;
                     _.each(body.response.posts, function(post){
                         var filename = "post-" + post['timestamp'] + '-' +
                             (post['slug'] || post['type']) + '.json';
 
                         if(filename == upto){
                             console.log('previous backup point found');
-                            fin();
-                            process.exit(0);
+                            d(function(){
+                                fin();
+                                process.exit(0);
+                            });
+                            cancel = true;
+                            return;
+                        }
+                        if(cancel == true){
+                            return;
                         }
 
                         if(post['format'] != "html"){
@@ -205,25 +235,7 @@ switch (command) {
                             JSON.stringify(output));
                     });
 
-                    // Now we clean up
-                    async.each(downloads, function(download, callback){
-                        console.log("<< %s", download['d']);
-                        request({
-                            url: download['d'],
-                            encoding: null
-                        }, function(error, response, body){
-                            if(!error && response.statusCode == 200){
-                                fs.writeFileSync(path.join(where, download['f']), body);
-                                callback();
-                            } else {
-                                if(response){
-                                    console.log("code: " + response.statusCode);
-                                }
-                                console.error("err: " + error);
-                                process.exit(-1);
-                            }
-                        });
-                    }, function(){
+                    d(function(){
                         trawl(start+20);
                     });
                 } else {

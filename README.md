@@ -18,3 +18,6 @@ Then you can browse your archive:
 
 Don't worry, everything is just json files and the related media (yes it
 downloads images etc too!)
+
+
+TODO: use grunt or something for building a deploy version w/browserify
