@@ -1,0 +1,64 @@
+{
+    "answer": "<p><a class=\"tumblr_blog\" href=\"http://shaniatween.tumblr.com/post/35396774183/do-u-have-a-sexuality-or\">shaniatween</a>:</p>\n\n<blockquote><p>a sexuality?? in THIS economy???</p></blockquote><p></p>",
+    "asking_name": "Anonymous",
+    "asking_url": null,
+    "blog_name": "headbangerkenny",
+    "date": "2015-09-10 11:14:41 GMT",
+    "format": "html",
+    "highlighted": [],
+    "id": 128770143138,
+    "note_count": 141852,
+    "post_url": "http://tumblr.kennydude.me/post/128770143138/do-u-have-a-sexuality-or",
+    "question": "do u have a sexuality or...?",
+    "reblog": {
+        "comment": "",
+        "tree_html": "<p><a class=\"tumblr_blog\" href=\"http://shaniatween.tumblr.com/post/35396774183/do-u-have-a-sexuality-or\">shaniatween</a>:</p><blockquote><p>a sexuality?? in THIS economy???</p></blockquote>\n"
+    },
+    "reblog_key": "haxWfTfH",
+    "recommended_color": null,
+    "recommended_source": null,
+    "short_url": "http://tmblr.co/ZcpONx1txJ7EY",
+    "slug": "do-u-have-a-sexuality-or",
+    "source_title": "shaniatween",
+    "source_url": "http://shaniatween.tumblr.com/post/35396774183/do-u-have-a-sexuality-or",
+    "state": "published",
+    "tags": [],
+    "timestamp": 1441883681,
+    "trail": [
+        {
+            "blog": {
+                "active": true,
+                "name": "shaniatween",
+                "theme": {
+                    "avatar_shape": "circle",
+                    "background_color": "#A1D8BD",
+                    "body_font": "Helvetica Neue",
+                    "header_bounds": "21,80,66,0",
+                    "header_focus_height": 45,
+                    "header_focus_width": 80,
+                    "header_full_height": 93,
+                    "header_full_width": 104,
+                    "header_image": "http://static.tumblr.com/a5fcb9ce36f0ec76765cd5d176e83088/gedrc8y/mhsn58wrh/tumblr_static_.jpg",
+                    "header_image_focused": "http://static.tumblr.com/a5fcb9ce36f0ec76765cd5d176e83088/gedrc8y/UQJn58wri/tumblr_static_tumblr_static__focused_v3.jpg",
+                    "header_image_scaled": "http://static.tumblr.com/a5fcb9ce36f0ec76765cd5d176e83088/gedrc8y/mhsn58wrh/tumblr_static__2048_v2.jpg",
+                    "header_stretch": true,
+                    "link_color": "#A1D8BD",
+                    "show_avatar": true,
+                    "show_description": true,
+                    "show_header_image": true,
+                    "show_title": true,
+                    "title_color": "#444444",
+                    "title_font": "Gibson",
+                    "title_font_weight": "bold"
+                }
+            },
+            "content": "<p>a sexuality?? in THIS economy???</p>",
+            "content_raw": "<p>a sexuality?? in THIS economy???</p>",
+            "is_root_item": true,
+            "post": {
+                "id": "35396774183"
+            }
+        }
+    ],
+    "type": "answer"
+}

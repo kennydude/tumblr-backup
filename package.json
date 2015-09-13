@@ -1,10 +1,10 @@
 {
   "name": "tumblr-backup",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Backup a tumblr blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel/register"
   },
   "bin": {
     "tumblr-backup": "./index.js"
@@ -24,12 +24,16 @@
     "backbone": "^1.2.3",
     "backbone.marionette": "^2.4.2",
     "bootstrap": "^3.3.5",
+    "colors": "^1.1.2",
     "express": "^4.13.3",
     "glob": "^5.0.14",
     "jquery": "^2.1.4",
-    "request": "^2.61.0"
+    "request": "^2.61.0",
+    "youtube-dl": "^1.10.5"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.2.0",
     "mocha": "^2.3.2"
   }
 }

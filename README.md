@@ -1,5 +1,7 @@
 # Tumblr Backup
 
+[![Circle CI](https://circleci.com/gh/kennydude/tumblr-backup.svg?style=svg)](https://circleci.com/gh/kennydude/tumblr-backup)
+
 Backup your tumblr!
 
 ## Install
@@ -20,4 +22,5 @@ Don't worry, everything is just json files and the related media (yes it
 downloads images etc too!)
 
 
+In-progress: Version 2 which will bring a rewrite using tests and a lot more :)
 TODO: use grunt or something for building a deploy version w/browserify
