@@ -1,5 +1,7 @@
 # Tumblr Backup
 
+**Note:** [Tumblr Backup NG](https://gitlab.com/kennydude/tb-ng) replaces this
+
 [![Circle CI](https://circleci.com/gh/kennydude/tumblr-backup.svg?style=svg)](https://circleci.com/gh/kennydude/tumblr-backup)
 
 Backup your tumblr!
