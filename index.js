@@ -113,7 +113,7 @@ switch (command) {
                 }, c);
             }
 
-            var url = "http://api.tumblr.com/v2/blog/" + what + "/posts?offset=" + start + "&api_key" + key;
+            var url = "http://api.tumblr.com/v2/blog/" + what + "/posts?offset=" + start + "&api_key=" + key;
             console.log("< %s", url);
             request(url, function(error, response, body){
                 if(!error && response.statusCode == 200){
